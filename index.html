@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Example</title>
+		<style>
+			html {
+				font-family: sans-serif;
+			}
+		</style>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				let email = "";
@@ -22,11 +27,13 @@
 			To reproduce the issue:
 		</p>
 		<ol start="0">
-			<li>Open the DevTools window to see console.logs</li>
+			<li>Open the DevTools window to see logs in the browser console</li>
 			<li>Enter a random email and password</li>
-			<li>Submit and click "Save" on the Firefox popup asking whether you want to save the entered credentials</li>
-			<li>Reload the page, Firefox should autofill both the email and password fields</li>
-			<li>Pressing Submit again will log an empty email and the autofilled password</li>
+			<li>Submit</li>
+			<li>Click "Save" on the Firefox popup asking whether you want to save the entered credentials</li>
+			<li>Reload the page</li>
+			<li>Firefox should autofill both the email and password fields</li>
+			<li>Pressing Submit again will log an empty email (wrong, change event not dispatched) and the autofilled password (correct, change event dispatched)</li>
 		</ol>
 		<form action="/">
 			<input type="email" name="email"><br>
